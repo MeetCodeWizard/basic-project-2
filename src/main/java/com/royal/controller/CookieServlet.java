@@ -18,8 +18,8 @@ public class CookieServlet extends HttpServlet {
 		
 		if(password.equals("admin")) {
 			Cookie cookie = new Cookie("userName", username);
+			cookie.setMaxAge(60*60);
 			response.addCookie(cookie);
-			
 			response.sendRedirect("CookieHome.jsp");
 		}else {
 			response.sendRedirect("CookieLogin.jsp");
